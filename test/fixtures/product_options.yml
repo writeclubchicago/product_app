@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  product_id: MyString
+  optionone: MyString
+  optiontwo: MyString
+  optionthree: MyString
+
+two:
+  product_id: MyString
+  optionone: MyString
+  optiontwo: MyString
+  optionthree: MyString

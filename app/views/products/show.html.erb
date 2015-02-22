@@ -1,0 +1,71 @@
+<!-- <h1> show.html.erb </h1> -->
+
+
+
+
+<li><a href="/orders">Place Order</a></li>
+
+<a href=" /products">Main</a>
+<h1> Product: <%= @product.title %> </h1> 
+<h1><%= @product.salemessage %> </h1> 
+<!-- <h3>  -->
+<br> 
+	Subtotal <%= number_to_currency(@product.subtotal) %> 
+<br>
+Tax <%= number_to_currency(@product.tax) %> 
+<br>
+Total <%= number_to_currency(@product.total) %> 
+<!-- </h3> -->
+<br> 
+<img src= <%= @product.image %> width =300px” > 
+<%= @product.description %> 
+<!-- <div>
+<h3> --> 
+<br>
+<%= @product.category %> - - -
+<!-- </h3> 
+<h3>  -->
+<%= @product.salemessage %> - - -  
+<% if @product.vendor %> 
+<%= @product.vendor.name %> 
+<% end %> 
+
+<ul> 
+<% @product.product_options.each do |product_option| %>
+<li><%= product_option.option %></li> 
+<% end %>
+</ul>
+<br> 
+<%= form_tag "/orders" do  %>
+<%= label_tag :quantity  %>
+<%= text_field_tag :quantity  %>
+
+<%= hidden_field_tag :product_id, @product.id  %>
+
+<%= submit_tag "Buy Now!" %>
+<% end %>
+<br> 
+
+<!-- </h3> --> 
+</div> 
+<h5> Added on <%= @product.friendly_created_at %> </h5> 
+<h5> Updated on <%= @product.friendly_updated_at %> </h5> 
+<!-- <h5> Updated at <%= @product.updated_at %> </h5> 
+ --><a href=" /">Main</a>
+
+
+
+
+
+<a href=" /products/<%= @product.id %>/edit">Edit</a>
+
+<a href="/products/<%= @product.id %>" data-method="delete" rel="nofollow" data-confirm="Are you sure?">Delete</a>
+<!-- <a href="/products/<%= @product.id %>" data-method="delete" rel="nofollow" data-confirm="Are You Sure?">Delete</a> -->
+
+<!-- <a href="/products/<%= @product.id %>/delete">Delete</a>
+ -->
+
+
+
+
+

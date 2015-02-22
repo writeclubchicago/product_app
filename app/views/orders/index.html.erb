@@ -1,0 +1,18 @@
+<!-- <h1>index.html.erb</h1> -->
+<!-- 	flash[:success] = "Product added." -->
+<h1>Order Page <br> 
+</h1> 	
+<% if current_user %> 
+<h2> Hi there, <%= current_user.email %> </br>
+Welcome to Orders! </br>
+TIME TO BUY!
+<li><a href="/orders/new">Place Order</a></li>
+</h2> 
+<% end %> 
+<li><a href="/users/sign_in">Sign In</a></li>
+<li><a href="/users/sign_up">Sign Up</a></li>
+<% if current_user %> 
+<li><a href="/users/sign_out" data-method="delete" rel="nofollow" data-confirm="Are you sure?">Sign Out</a></li>
+<% end %> 
+
+<h2> The time now is <%=Time.now.strftime("%I:%M:%S %p")  %></h2> 

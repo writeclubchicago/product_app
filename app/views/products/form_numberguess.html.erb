@@ -1,0 +1,17 @@
+<h1> form_numberguess.html.erb</h1>
+<h2> Please enter a number</h2> 
+<%= form_tag '/submit-message' do %>
+<!--%= form_tag '/submit-numberguess' do %>
+<!-- form tag is a build-in rail thing -->
+<%= label_tag :message %>
+<%= text_field_tag :message %> 
+<%= submit_tag "Submit Number" %> 
+
+
+<% end %> 
+
+<!-- <h1> You guessed </h2> 
+<h2> <%= @message %></h2> 
+<h1> <%= @message2 %></h2> 
+
+<img src= <%= @image %> width =100px” >  -->

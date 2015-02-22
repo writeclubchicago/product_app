@@ -1,0 +1,8 @@
+<h1> Here is the form.html.erb </h1>
+<%= form_tag '/submit-message' do %>
+<!-- form tag is a build-in rail thing -->
+<%= label_tag :message %>
+<%= text_field_tag :message %> 
+<%= submit_tag "Submit Message" %> 
+
+<% end %> 
