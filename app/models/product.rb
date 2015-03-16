@@ -2,7 +2,23 @@ class Product < ActiveRecord::Base
 	belongs_to :vendor
 	has_many :product_options # always PLURAL
 	has_many :orders #always PLURAL
+	has_many :categorized_products
+	has_many :categories, :through => :categorized_products
 	# belongs_to :product_option
+
+	has_many :carted_products
+	has_many :orders, :through => :carted_products	
+
+
+validates :title, :vendor_id, :price, presence: { strict: true }
+validates :title, uniqueness: { case_sensitive: false }
+validates :title, length: { minimum: 2 }
+validates :title, length: { maximum: 2 }
+
+validates :price, numericality: { only_decimal: true }
+
+
+
 
 # end 
 # class Product < ActiveRecord::Base

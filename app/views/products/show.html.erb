@@ -54,16 +54,34 @@ Total <%= number_to_currency(@product.total) %>
  --><a href=" /">Main</a>
 
 
+<!-- add carpenter 2/27/2015 -->
 
 
 
 <a href=" /products/<%= @product.id %>/edit">Edit</a>
 
 <a href="/products/<%= @product.id %>" data-method="delete" rel="nofollow" data-confirm="Are you sure?">Delete</a>
+else
+    flash[:warning] = "Please sign in!"
+    redirect_to "/products"
+
+
+  <%= form_tag "/carted_products" do %>
+    <%= label_tag :quantity %>
+    <%= text_field_tag :quantity %>
+
+    <%= hidden_field_tag :product_id, @product.id %>
+
+    <%= submit_tag "Add To Cart" %>
+  <% end %>
 <!-- <a href="/products/<%= @product.id %>" data-method="delete" rel="nofollow" data-confirm="Are You Sure?">Delete</a> -->
 
 <!-- <a href="/products/<%= @product.id %>/delete">Delete</a>
  -->
+
+
+
+
 
 
 

@@ -2,59 +2,55 @@
 <h2> 
 
 <%= form_tag '/orders' do %>	
-  <div id="form_div">
+<div id="form_div">
     <div class="inner_div">
 	<%= label_tag :product_id %>
 	<%= text_field_tag :product_id %>
+</div> 
 
-    <div class="inner_div">
+<div class="inner_div">
 	<%= label_tag :user_id %>
 	<%= text_field_tag :user_id %>
 </div> 
-    <div class="inner_div">
+
+<div class="inner_div">
 	<%= label_tag :quantity %>
 	<%= text_field_tag :quantity %>	
 </div> 
-</div> 
-    <div class="inner_div">
+
+<div class="inner_div">
 	<%= label_tag :product_option_id %>
 	<%= text_field_tag :product_option_id %>	
 </div> 
-</div> 
-    <div class="inner_div">
+
+<div class="inner_div">
 	<%= label_tag :subtotal %>
 	<%= text_field_tag :subtotal %>	
 </div> 
-</div> 
-    <div class="inner_div">
+
+<div class="inner_div">
 	<%= label_tag :tax %>
 	<%= text_field_tag :tax %>	
 </div> 
 
-</div> 
-    <div class="inner_div">
+<div class="inner_div">
 	<%= label_tag :total %>
 	<%= text_field_tag :total %>	
 </div> 
 
-</div> 
-    <div class="inner_div">
+<div class="inner_div">
 	<%= label_tag :status %>
 	<%= text_field_tag :status %>	
 </div> 
 
-</div> 
-    <div class="inner_div">
+<div class="inner_div">
 	<%= label_tag :comments %>
 	<%= text_field_tag :comments %>	
 </div> 
 
-
-</div> 
-    <div class="inner_div">
+<div class="inner_div">
 	<%= submit_tag "Add Product" %>
-</div> 
-
+</div>
 
 <% end %> 
 </div> 

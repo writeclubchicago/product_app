@@ -1,4 +1,6 @@
 class ProductsController < ApplicationController
+
+
 #original index
 # def index
 # 	@products = Product.all  
@@ -283,11 +285,7 @@ end
 
   end
 
-
-
 # def submit_message
 # 	Employee.create({:first_name =>params[:first], :last_name => params[:last], :title => params[:title]})
 
 # end 
-
-

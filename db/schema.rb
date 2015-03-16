@@ -11,20 +11,41 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150220004005) do
+ActiveRecord::Schema.define(version: 20150227003736) do
+
+  create_table "carted_products", force: :cascade do |t|
+    t.integer  "product_id", limit: 4
+    t.integer  "order_id",   limit: 4
+    t.integer  "quantity",   limit: 4
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "categories", force: :cascade do |t|
+    t.string   "name",       limit: 255
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "categorized_products", force: :cascade do |t|
+    t.integer  "product_id",  limit: 4
+    t.integer  "category_id", limit: 4
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "orders", force: :cascade do |t|
-    t.integer  "product_id",        limit: 4
+    t.integer  "zproduct_id",       limit: 4
     t.integer  "user_id",           limit: 4
     t.integer  "quantity",          limit: 4
     t.integer  "product_option_id", limit: 4
-    t.decimal  "subtotal",                      precision: 10
-    t.decimal  "tax",                           precision: 10
-    t.decimal  "total",                         precision: 10
+    t.decimal  "subtotal",                      precision: 7, scale: 2
+    t.decimal  "tax",                           precision: 7, scale: 2
+    t.decimal  "total",                         precision: 7, scale: 2
     t.string   "status",            limit: 255
     t.string   "comments",          limit: 255
-    t.datetime "created_at",                                   null: false
-    t.datetime "updated_at",                                   null: false
+    t.datetime "created_at",                                            null: false
+    t.datetime "updated_at",                                            null: false
   end
 
   create_table "product_options", force: :cascade do |t|
@@ -41,6 +62,7 @@ ActiveRecord::Schema.define(version: 20150220004005) do
     t.datetime "created_at",                                        null: false
     t.datetime "updated_at",                                        null: false
     t.integer  "vendor_id",   limit: 4
+    t.integer  "category_id", limit: 4
   end
 
   create_table "users", force: :cascade do |t|
@@ -56,6 +78,7 @@ ActiveRecord::Schema.define(version: 20150220004005) do
     t.string   "last_sign_in_ip",        limit: 255
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "admin",                  limit: 4,   default: 1
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
