@@ -1,0 +1,15 @@
+<li><a href="/orders">All Orders</a></li>
+
+<h1> <%= @scenario.scenario %></h1>
+<h1> <%= @scenario.short_description %></h1>
+<h1> <%= @scenario.description %> </h1>
+
+<div class="span6">
+	<h2>Document</h2>
+<%= form_tag '/answers' do %>
+<%= text_area_tag :answer %>
+<%= submit_tag "Run Query" %>
+<%= end %> 
+</div>
+
+

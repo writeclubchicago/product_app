@@ -1,0 +1,28 @@
+<h1>Great job!</h1>
+<h2>Here was the query you submitted:</h2>
+<pre><%= @query %></pre>
+<h3>Data</h3>
+<div>
+	<table>
+		<tr>
+			<th> id </th>
+			<th> first_name </th>
+			<th> last_name </th>
+			<th> gender </th>
+			<tr>
+				<% @players.each do |player| %> 
+				<tr>
+					<td><%= player.id %><td>
+					<td><%= player.first_name %></td>
+					<td><%= player.last_name %></td>
+					<td><%= player.gender %></td>
+				</tr>
+				<% end %> 
+			</table>
+		</div>
+		<% if @correct %>
+		<h4> You go the right answer!</h4>
+		<% else %>
+		<h4> Sorry, that's not the correct answer </h4>
+		<% end %> 
+		
